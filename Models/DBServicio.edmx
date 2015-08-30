@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbServicioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DPI" Type="varchar" MaxLength="255" />
+          <Property Name="telefono" Type="int" />
+          <Property Name="correo" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Servicio">
+          <Key>
+            <PropertyRef Name="idServicio" />
+          </Key>
+          <Property Name="idServicio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCliente" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="fechaIngreso" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaEntrega" Type="varchar" MaxLength="255" />
+          <Property Name="tipo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="marca" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="modelo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="falla" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="repuesto" Type="varchar" MaxLength="255" />
+          <Property Name="informe" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="costo" Type="int" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nick" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="contraseña" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="telefono" Type="int" />
+          <Property Name="correo" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__Servicio__idClie__145C0A3F">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="Servicio">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicio__idUsua__15502E78">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Servicio">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbServicioModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Servicio__idClie__145C0A3F" Association="Self.FK__Servicio__idClie__145C0A3F">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Servicio" EntitySet="Servicio" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicio__idUsua__15502E78" Association="Self.FK__Servicio__idUsua__15502E78">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Servicio" EntitySet="Servicio" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbServicioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DPI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="Int32" />
+          <Property Name="correo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Servicios" Relationship="Self.FK__Servicio__idClie__145C0A3F" FromRole="Cliente" ToRole="Servicio" />
+        </EntityType>
+        <EntityType Name="Servicio">
+          <Key>
+            <PropertyRef Name="idServicio" />
+          </Key>
+          <Property Name="idServicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="fechaIngreso" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaEntrega" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tipo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="marca" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="modelo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="falla" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="repuesto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="informe" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="costo" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK__Servicio__idClie__145C0A3F" FromRole="Servicio" ToRole="Cliente" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Servicio__idUsua__15502E78" FromRole="Servicio" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nick" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contraseña" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="Int32" />
+          <Property Name="correo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Servicios" Relationship="Self.FK__Servicio__idUsua__15502E78" FromRole="Usuario" ToRole="Servicio" />
+        </EntityType>
+        <Association Name="FK__Servicio__idClie__145C0A3F">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="Servicio">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicio__idUsua__15502E78">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Servicio">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbServicioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+          <EntitySet Name="Servicios" EntityType="Self.Servicio" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Servicio__idClie__145C0A3F" Association="Self.FK__Servicio__idClie__145C0A3F">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Servicio" EntitySet="Servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicio__idUsua__15502E78" Association="Self.FK__Servicio__idUsua__15502E78">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Servicio" EntitySet="Servicios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbServicioModelStoreContainer" CdmEntityContainer="dbServicioEntities">
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="dbServicioModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="DPI" ColumnName="DPI" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servicios">
+            <EntityTypeMapping TypeName="dbServicioModel.Servicio">
+              <MappingFragment StoreEntitySet="Servicio">
+                <ScalarProperty Name="idServicio" ColumnName="idServicio" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+                <ScalarProperty Name="fechaEntrega" ColumnName="fechaEntrega" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="modelo" ColumnName="modelo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="falla" ColumnName="falla" />
+                <ScalarProperty Name="repuesto" ColumnName="repuesto" />
+                <ScalarProperty Name="informe" ColumnName="informe" />
+                <ScalarProperty Name="costo" ColumnName="costo" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="dbServicioModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="nick" ColumnName="nick" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

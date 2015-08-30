@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Views.User.AddUserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignWidth="400" Height="304.977">
+    <Grid>
+        <Label Content="Agregar Nuevo Usuario" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="380" Height="60" FontSize="35" HorizontalContentAlignment="Center"/>
+        <Label Content="Nombre de Usuario:" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Nombre Completo:" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="10,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="txtTelefono" HorizontalAlignment="Left" Height="23" Margin="190,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="txtNombreUsuario" HorizontalAlignment="Left" Height="23" Margin="10,155,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Margin="190,155,0,0" VerticalAlignment="Top" Width="175"/>
+        <PasswordBox x:Name="txtContraseña" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Contraseña:" HorizontalAlignment="Left" Margin="10,183,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button x:Name="btnAgregarUsuario" Content="Agregar" HorizontalAlignment="Left" Margin="290,207,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="190,75,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Correo Electrónico:" HorizontalAlignment="Left" Margin="190,129,0,0" VerticalAlignment="Top" Width="175"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="210,207,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</UserControl>

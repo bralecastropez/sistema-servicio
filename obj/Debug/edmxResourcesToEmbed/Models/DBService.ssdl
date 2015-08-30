@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbServicioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="idCliente" />
+    </Key>
+    <Property Name="idCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DPI" Type="varchar" MaxLength="255" />
+    <Property Name="telefono" Type="int" />
+    <Property Name="correo" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="idServicio" />
+    </Key>
+    <Property Name="idServicio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCliente" Type="int" Nullable="false" />
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="fechaIngreso" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="fechaEntrega" Type="varchar" MaxLength="255" />
+    <Property Name="tipo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="marca" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="modelo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="falla" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="repuesto" Type="varchar" MaxLength="255" />
+    <Property Name="informe" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="costo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="nick" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="contraseña" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="telefono" Type="int" />
+    <Property Name="correo" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK__Servicio__idClie__145C0A3F">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="Servicio">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Servicio__idUsua__15502E78">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Servicio">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbServicioModelStoreContainer">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servicio" EntityType="Self.Servicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Servicio__idClie__145C0A3F" Association="Self.FK__Servicio__idClie__145C0A3F">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Servicio" EntitySet="Servicio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Servicio__idUsua__15502E78" Association="Self.FK__Servicio__idUsua__15502E78">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Servicio" EntitySet="Servicio" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

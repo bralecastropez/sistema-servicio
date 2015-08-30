@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Views.User.MainUserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="630" Width="690" Initialized="UserControl_Initialized">
+    <Grid>
+        <Label Content="Usuarios" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="670" Height="50" FontSize="35" HorizontalContentAlignment="Center"/>
+        <DataGrid Name="dgUsuarios" SelectedItem="{Binding UsuarioSeleccionado}" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Single" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Height="527" Width="589"/>
+        <Button Name="btnAddUser" Content="Agregar" HorizontalAlignment="Left" Margin="604,97,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="604,124,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="604,151,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="534"/>
+        <Button Content="Buscar" HorizontalAlignment="Left" Margin="549,60,0,0" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnActualizar" Content="Actualizar" HorizontalAlignment="Left" Margin="604,60,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</UserControl>

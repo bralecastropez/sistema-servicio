@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbServicioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="idCliente" />
+    </Key>
+    <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DPI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="Int32" />
+    <Property Name="correo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Servicios" Relationship="Self.FK__Servicio__idClie__145C0A3F" FromRole="Cliente" ToRole="Servicio" />
+  </EntityType>
+  <EntityType Name="Servicio">
+    <Key>
+      <PropertyRef Name="idServicio" />
+    </Key>
+    <Property Name="idServicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCliente" Type="Int32" Nullable="false" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="fechaIngreso" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fechaEntrega" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="tipo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="marca" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="modelo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="falla" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="repuesto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="informe" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="costo" Type="Int32" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK__Servicio__idClie__145C0A3F" FromRole="Servicio" ToRole="Cliente" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Servicio__idUsua__15502E78" FromRole="Servicio" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nick" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contraseña" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="Int32" />
+    <Property Name="correo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Servicios" Relationship="Self.FK__Servicio__idUsua__15502E78" FromRole="Usuario" ToRole="Servicio" />
+  </EntityType>
+  <Association Name="FK__Servicio__idClie__145C0A3F">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="Servicio">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Servicio__idUsua__15502E78">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Servicio" Type="Self.Servicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="Servicio">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbServicioEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+    <EntitySet Name="Servicios" EntityType="Self.Servicio" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK__Servicio__idClie__145C0A3F" Association="Self.FK__Servicio__idClie__145C0A3F">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Servicio" EntitySet="Servicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Servicio__idUsua__15502E78" Association="Self.FK__Servicio__idUsua__15502E78">
+      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="Servicio" EntitySet="Servicios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

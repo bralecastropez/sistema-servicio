@@ -1,0 +1,8 @@
+﻿<Window x:Name="wdPrincipal" x:Class="MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Proyecto Servicio" Height="500" Width="500" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+    </Grid>
+</Window>

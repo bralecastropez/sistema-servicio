@@ -1,0 +1,250 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Proyecto_Servicio
+</name>
+</assembly>
+<members>
+<member name="M:Proyecto_Servicio.Application.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:Proyecto_Servicio.Application.Main">
+	<summary>
+Application Entry Point.
+</summary>
+</member><member name="T:Proyecto_Servicio.Application">
+	<summary>
+Application
+</summary>
+</member><member name="M:Proyecto_Servicio.Views.Service.MainServiceView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.Views.Service.MainServiceView">
+	<summary>
+MainServiceView
+</summary>
+</member><member name="M:Proyecto_Servicio.Views.Service.AddServiceView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.Views.Service.AddServiceView">
+	<summary>
+AddServiceView
+</summary>
+</member><member name="M:Proyecto_Servicio.Views.Customer.AddCustomerView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.Views.Customer.AddCustomerView">
+	<summary>
+AddCustomerView
+</summary>
+</member><member name="M:Proyecto_Servicio.Views.Main.MainView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.Views.Main.MainView">
+	<summary>
+MainView
+</summary>
+</member><member name="M:Proyecto_Servicio.Views.Customer.MainCustomerView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.Views.Customer.MainCustomerView">
+	<summary>
+MainCustomerView
+</summary>
+</member><member name="M:Proyecto_Servicio.Views.Service.SearchServiceView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.Views.Service.SearchServiceView">
+	<summary>
+SearchServiceView
+</summary>
+</member><member name="M:Proyecto_Servicio.Views.Service.OnHoldServiceView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.Views.Service.OnHoldServiceView">
+	<summary>
+OnHoldServiceView
+</summary>
+</member><member name="M:Proyecto_Servicio.Views.Main.LoginUserView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.Views.Main.LoginUserView">
+	<summary>
+LoginUserView
+</summary>
+</member><member name="M:Proyecto_Servicio.MainWindow.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.MainWindow">
+	<summary>
+MainWindow
+</summary>
+</member><member name="M:Proyecto_Servicio.Views.Service.PrintServiceView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.Views.Service.PrintServiceView">
+	<summary>
+PrintServiceView
+</summary>
+</member><member name="M:Proyecto_Servicio.Views.User.AddUserView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.Views.User.AddUserView">
+	<summary>
+AddUserView
+</summary>
+</member><member name="M:Proyecto_Servicio.Views.User.MainUserView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.Views.User.MainUserView">
+	<summary>
+MainUserView
+</summary>
+</member><member name="M:Proyecto_Servicio.Views.Service.DeliveredServiceView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Proyecto_Servicio.Views.Service.DeliveredServiceView">
+	<summary>
+DeliveredServiceView
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSet.ClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSet.ServicioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSet.UsuarioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSet.ClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSet.ServicioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSet.UsuarioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSet.ClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSet.ServicioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSet.UsuarioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSetTableAdapters.ClienteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSetTableAdapters.ServicioTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSetTableAdapters.UsuarioTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:Proyecto_Servicio.dbServicioDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Proyecto_Servicio.dbServicioDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:Proyecto_Servicio.dbServicioDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Proyecto_Servicio.dbServicioDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:Proyecto_Servicio.dbServicioDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Proyecto_Servicio.dbServicioDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:Proyecto_Servicio.dbServicioDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:Proyecto_Servicio.dbServicioDataSetTableAdapters.TableAdapterManager.UpdateAll(Proyecto_Servicio.dbServicioDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:Proyecto_Servicio.dbServicioDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:Proyecto_Servicio.My.MyWpfExtension.Application">
+	<summary>
+ Returns the application object for the running application
+ </summary>
+</member><member name="P:Proyecto_Servicio.My.MyWpfExtension.Computer">
+	<summary>
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:Proyecto_Servicio.My.MyWpfExtension.User">
+	<summary>
+ Returns information for the current user.  If you wish to run the application with the current 
+ Windows user credentials, call My.User.InitializeWithWindowsUser().
+ </summary>
+</member><member name="P:Proyecto_Servicio.My.MyWpfExtension.Log">
+	<summary>
+ Returns the application log. The listeners can be configured by the application's configuration file.
+ </summary>
+</member><member name="P:Proyecto_Servicio.My.MyWpfExtension.Windows">
+	<summary>
+ Returns the collection of Windows defined in the project.
+ </summary>
+</member><member name="T:Proyecto_Servicio.My.MyWpfExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for WPF
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Proyecto_Servicio.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Proyecto_Servicio.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:Proyecto_Servicio.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>
